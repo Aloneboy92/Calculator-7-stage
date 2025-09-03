@@ -1,0 +1,1 @@
+Welcome to our website! Here, you can create your full 3x 7-stage plan easily and interactively. Explore, customize, and track your plans step by step, all in one place. Designed for simplicity, fun, and productivity
