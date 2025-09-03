@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SK Team 92 — Multi Amount 7 Step Calculator</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f2f5; text-align: center; padding: 30px; }
+    .container { max-width: 550px; margin: auto; background: #fff; padding: 20px; border-radius: 15px; box-shadow: 0px 4px 10px rgba(0,0,0,0.2); }
+    input, button { padding: 10px; width: 80%; margin: 10px 0; border-radius: 8px; border: 1px solid #ccc; font-size: 16px; }
+    button { background: #007bff; color: white; font-weight: bold; cursor: pointer; }
+    button:hover { background: #0056b3; }
+    .result { margin-top: 20px; text-align: left; }
+    .logo { font-size: 22px; font-weight: bold; color: #007bff; margin-bottom: 15px; }
+    ul { padding-left: 20px; text-align: left; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">🌟 SK Team 87 🌟</div>
+    <h2>💰 Multi-Amount 7 Step 3X Plan Calculator</h2>
+
+    <input type="number" id="amount" placeholder="Enter your total amount (e.g. 1000 - 1000000)">
+    <button onclick="calculatePlan()">Get Plan</button>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function calculatePlan() {
+      let total = parseFloat(document.getElementById("amount").value);
+      if (isNaN(total) || total <= 0) {
+        alert("Please enter a valid amount!");
+        return;
+      }
+
+      // Geometric series sum for 7 steps with ratio 3
+      let ratioSum = (Math.pow(3, 7) - 1) / (3 - 1); 
+      let start = Math.max(1, Math.floor(total / ratioSum)); // Starting minimum 1
+
+      let steps = [];
+      let current = start;
+      for (let i = 0; i < 7; i++) {
+        steps.push(current);
+        current *= 3;
+      }
+
+      let resultHTML = `<h3>Total Entered: Rs${total}</h3><h3>Your 7 Step Plan:</h3><ul>`;
+      steps.forEach((step, index) => {
+        resultHTML += `<li>Step ${index + 1}: Rs${step}</li>`;
+      });
+      resultHTML += "</ul>";
+      document.getElementById("result").innerHTML = resultHTML;
+    }
+  </script>
+  <div id="notice">
+  ⚠️ Note: Agar calculator kabhi open na ho ya error aaye,
+  to thodi der baad dobara try karein. Service automatically wapas theek ho jaayegi.
+    account registration 👇🏼
+    https://87lucky.club/r/6powyu
+  </div>
+</body>
+</html>
